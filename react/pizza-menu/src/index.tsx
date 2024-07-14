@@ -25,12 +25,37 @@ const Menu = () => {
 	return (
 		<main className="menu">
 			<h2>Menu</h2>
-			<Pizza />
-			<Pizza />
-			<Pizza />
-			<Pizza />
-			<Pizza />
+			<Pizza
+				name="Focaccia"
+				ingredients="Tomato, Mozzarella, Basil"
+				photoName="pizzas/focaccia.jpg"
+				price={2.99}
+			/>
+			<Pizza
+				name="Margherita"
+				ingredients="Tomato, Mozzarella, Basil, Olive oil"
+				photoName="pizzas/margherita.jpg"
+				price={1.99}
+			/>
 		</main>
+	)
+}
+
+const Pizza = (props: {
+	name: string
+	ingredients: string
+	photoName: string
+	price: number
+}) => {
+	return (
+		<div className="pizza">
+			<img src={props.photoName} alt={props.name} />
+			<div>
+				<h3>{props.name}</h3>
+				<p>{props.ingredients}</p>
+				<span>{props.price}</span>
+			</div>
+		</div>
 	)
 }
 
@@ -44,30 +69,18 @@ const Footer = () => {
 		return (
 			<footer className="footer">
 				<h3>Fast React Pizza Co.</h3>
-				<p>Open until {closeHour} </p>
+				<p>Open until {closeHour}</p>
 			</footer>
 		)
 	} else {
 		return (
 			<footer>
 				<h2>Fast React Pizza Co.</h2>
-				<p>Closed until {openHour} </p>
+				<p>Closed until {openHour}</p>
 			</footer>
 		)
 	}
 }
-
-const Pizza = () => {
-	return (
-		<div className="pizza">
-			<img src={pizzaData[0].photoName} alt="focaccia" />
-			<h4>{pizzaData[0].name}</h4>
-			<p>{pizzaData[0].ingredients}</p>
-			<p>{pizzaData[0].price}</p>
-		</div>
-	)
-}
-
 const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(
 	<React.StrictMode>
