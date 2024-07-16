@@ -25,37 +25,32 @@ const Menu = () => {
 	return (
 		<main className="menu">
 			<h2>Menu</h2>
-			<Pizza
-				name="Focaccia"
-				ingredients="Tomato, Mozzarella, Basil"
-				photoName="pizzas/focaccia.jpg"
-				price={2.99}
-			/>
-			<Pizza
-				name="Margherita"
-				ingredients="Tomato, Mozzarella, Basil, Olive oil"
-				photoName="pizzas/margherita.jpg"
-				price={1.99}
-			/>
+			<ul className="pizzas">
+				{pizzaData.map((pizza) => (
+					<Pizza pizzaObj={pizza} key={pizza.name} />
+				))}
+			</ul>
 		</main>
 	)
 }
 
 const Pizza = (props: {
-	name: string
-	ingredients: string
-	photoName: string
-	price: number
+	pizzaObj: {
+		name: string
+		ingredients: string
+		photoName: string
+		price: number
+	}
 }) => {
 	return (
-		<div className="pizza">
-			<img src={props.photoName} alt={props.name} />
+		<li className="pizza">
+			<img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
 			<div>
-				<h3>{props.name}</h3>
-				<p>{props.ingredients}</p>
-				<span>{props.price}</span>
+				<h3>{props.pizzaObj.name}</h3>
+				<p>{props.pizzaObj.ingredients}</p>
+				<span>{props.pizzaObj.price}</span>
 			</div>
-		</div>
+		</li>
 	)
 }
 
