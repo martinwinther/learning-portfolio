@@ -42,7 +42,9 @@ const Menu = () => {
 	)
 }
 
-const Pizza = (props: {
+const Pizza = ({
+	pizzaObj,
+}: {
 	pizzaObj: {
 		name: string
 		ingredients: string
@@ -51,15 +53,15 @@ const Pizza = (props: {
 		soldOut: boolean
 	}
 }) => {
-	if (props.pizzaObj.soldOut) return null
+	if (pizzaObj.soldOut) return null
 
 	return (
 		<li className="pizza">
-			<img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+			<img src={pizzaObj.photoName} alt={pizzaObj.name} />
 			<div>
-				<h3>{props.pizzaObj.name}</h3>
-				<p>{props.pizzaObj.ingredients}</p>
-				<span>{props.pizzaObj.price}</span>
+				<h3>{pizzaObj.name}</h3>
+				<p>{pizzaObj.ingredients}</p>
+				<span>{pizzaObj.price}</span>
 			</div>
 		</li>
 	)
@@ -84,10 +86,10 @@ const Footer = () => {
 	)
 }
 
-const Order = (props) => {
+const Order = ({ closeHour }) => {
 	return (
 		<div className="order">
-			<p>Open until {props.closeHour}</p>
+			<p>Open until {closeHour}</p>
 			<button className="btn">Order Now</button>
 		</div>
 	)
