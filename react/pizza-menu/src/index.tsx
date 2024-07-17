@@ -22,14 +22,22 @@ const Header = () => {
 }
 
 const Menu = () => {
+	const pizzas = pizzaData
+	const numPizzas = pizzas.length
+
 	return (
 		<main className="menu">
 			<h2>Menu</h2>
-			<ul className="pizzas">
-				{pizzaData.map((pizza) => (
-					<Pizza pizzaObj={pizza} key={pizza.name} />
-				))}
-			</ul>
+
+			{numPizzas > 0 ? (
+				<ul className="pizzas">
+					{pizzas.map((pizza) => (
+						<Pizza pizzaObj={pizza} key={pizza.name} />
+					))}
+				</ul>
+			) : (
+				<p>No pizzas available</p>
+			)}
 		</main>
 	)
 }
@@ -60,22 +68,22 @@ const Footer = () => {
 	const closeHour = 22
 	const isOpen = hour >= openHour && hour <= closeHour
 
-	if (isOpen) {
-		return (
-			<footer className="footer">
-				<h3>Fast React Pizza Co.</h3>
-				<p>Open until {closeHour}</p>
-			</footer>
-		)
-	} else {
-		return (
-			<footer>
-				<h2>Fast React Pizza Co.</h2>
-				<p>Closed until {openHour}</p>
-			</footer>
-		)
-	}
+	return (
+		<footer className="footer">
+			{isOpen ? (
+				<div className="order">
+					<p>Open until {closeHour}</p>
+					<button className="btn">Order Now</button>
+				</div>
+			) : (
+				<div className="order">
+					<p>Closed until {openHour}</p>
+				</div>
+			)}
+		</footer>
+	)
 }
+
 const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(
 	<React.StrictMode>
