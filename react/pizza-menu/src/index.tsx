@@ -30,11 +30,17 @@ const Menu = () => {
 			<h2>Menu</h2>
 
 			{numPizzas > 0 ? (
-				<ul className="pizzas">
-					{pizzas.map((pizza) => (
-						<Pizza pizzaObj={pizza} key={pizza.name} />
-					))}
-				</ul>
+				<>
+					<p>
+						Authentic Italian pizza. We're all about quality and taste. We're
+						not a chain restaurant, we're a family business.
+					</p>
+					<ul className="pizzas">
+						{pizzas.map((pizza) => (
+							<Pizza pizzaObj={pizza} key={pizza.name} />
+						))}
+					</ul>
+				</>
 			) : (
 				<p>No pizzas available</p>
 			)}
