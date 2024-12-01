@@ -4,7 +4,10 @@ def count_characters_frequency(text):
     for char in text:
         if char.isalpha():
             char_frequency[char] = char_frequency.get(char, 0) + 1
-    return char_frequency
+
+    char_list = list(char_frequency.items())
+    char_list.sort(key=lambda x: x[1], reverse=True)
+    return char_list
 
 def get_num_words(text):
     words = text.split()
@@ -23,6 +26,6 @@ character_counts = count_characters_frequency(book_contents)
 
 print(f"{word_count} words was found in the document")
 print(f"--- Begin report of {book_path} ---")
-for char, count in sorted(character_counts.items()):
+for char, count in character_counts:
     print(f"The '{char}' character appears {count} times")
 print("--- End report ---")
