@@ -1,7 +1,7 @@
 # Learning Projects Monorepo
 
 This repository contains various projects I have built and learning material I have gone through, while learning different technologies and frameworks.
-
+my first project
 ## React Projects
 
 - **[Pizza Menu](https://github.com/martinwinther/learning-portfolio/tree/main/react/pizza-menu)** (Components, props, JSX)
