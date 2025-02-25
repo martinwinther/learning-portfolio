@@ -14,5 +14,3 @@ my first project
 - **[Fast React Pizza](https://github.com/martinwinther/learning-portfolio/tree/main/react/fast-react-pizza)** (React Router data loading, Redux, Redux Toolkit, thunks, Tailwind CSS)
 - **[The Wild Oasis](https://github.com/martinwinther/learning-portfolio/tree/main/react/wild-oasis)** (React Query, Styled Components, React Hook Form, Supabase, advanced compound component pattern, authentication, charts, dark mode, professional application planning and development)
 - **[The Wild Oasis Website](https://github.com/martinwinther/learning-portfolio/tree/main/react/wild-oasis-website)** (Next.js "app" router, React Server Components, server actions, authentication with NextAuth)
-
-BookBot is my first [Boot.dev](https://www.boot.dev) project!
